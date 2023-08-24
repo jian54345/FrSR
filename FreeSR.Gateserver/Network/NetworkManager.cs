@@ -34,6 +34,7 @@
                 NotifyManager.AddReqGroupHandler(typeof(GachaReqGroup));
                 NotifyManager.AddReqGroupHandler(typeof(NPCReqGroup));
                 NotifyManager.AddReqGroupHandler(typeof(BattleReqGroup));
+                NotifyManager.AddReqGroupHandler(typeof(ShopReqGroup));
 
                 NotifyManager.Init();
             }

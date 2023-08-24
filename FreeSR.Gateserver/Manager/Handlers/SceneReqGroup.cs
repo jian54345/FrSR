@@ -49,7 +49,7 @@
 
             session.Send(CmdType.SceneEntityMoveScRsp, new SceneEntityMoveScRsp
             {
-                DownloadData = new() { },
+                DownloadData = new ClientDownloadData(),
                 EntityMotionList = request.EntityMotionList,
                 Retcode = Retcode.RETCODE_RET_SUCC
             });
@@ -61,12 +61,43 @@
         {
             var request = data as SetClientPausedCsReq;
 
-            session.Send(CmdType.SetClientPausedCsReq, new SetClientPausedScRsp
+            session.Send(CmdType.SetClientPausedScRsp, new SetClientPausedScRsp
             {
                 Paused = request.Paused,
                 Retcode = Retcode.RETCODE_RET_SUCC
             });
         }
+
+        [Handler(CmdType.GetSceneMapInfoCsReq)]
+        public static void OnGetSceneMapInfoCsReq(NetSession session, int cmdId, object data)
+        {
+            var request = data as GetSceneMapInfoCsReq;
+
+            session.Send(CmdType.GetSceneMapInfoScRsp, new GetSceneMapInfoScRsp
+            {
+                Retcode = Retcode.RETCODE_RET_SUCC,
+                LightenSectionList = new List<int>(),
+                EntryId = request.EntryId,
+                CurMapEntryId = request.EntryId,
+                JIBJCPPHKFI = request.JIBJCPPHKFI,
+                MazeGroupList = new()
+                {                  
+                },
+                EMGKEPONFBH = new() 
+                { 
+                },
+                KKFJFLAIBPP = new() 
+                {
+                },
+                MazePropList = new() 
+                { 
+                },
+                UnlockTeleportList = new() 
+                { 
+                },
+            });
+        }
+
 
     }
 }

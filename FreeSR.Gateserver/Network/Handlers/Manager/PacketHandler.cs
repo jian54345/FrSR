@@ -20,17 +20,21 @@
         public override void ChannelRead(IChannelHandlerContext context, object message)
         {
             NetPacket packet = message as NetPacket;
+            var cmdId = (CmdType)packet.CmdId;
             if (packet.Data == null)
             {
                 if (!SendDummyResponse(packet.CmdId))
-                    s_log.Warn($"CmdID {packet.CmdId} is undefined.");
+                    //s_log.Warn($"CmdID {packet.CmdId} is undefined.");
+
+                    s_log.Warn($"CmdID {cmdId} is undefined.");
 
                 return;
             }
 
             Protobuf2File(packet.CmdId, packet.Data);
 
-            s_log.Info($"Received packet {packet.CmdId}!");
+            //s_log.Info($"Received packet{packet.CmdId}!");
+            s_log.Info($"Received {cmdId}!");
             NotifyManager.Notify(_session, packet.CmdId, packet.Data);
         }
 
@@ -51,7 +55,7 @@
             {CmdType.GetRogueScoreRewardInfoCsReq, CmdType.GetRogueScoreRewardInfoScRsp},
             {CmdType.GetGachaInfoCsReq, CmdType.GetGachaInfoScRsp},
             {CmdType.QueryProductInfoCsReq, CmdType.QueryProductInfoScRsp},
-            {CmdType.GetQuestDataCsReq, CmdType.GetQuestDataScRsp},
+            //{CmdType.GetQuestDataCsReq, CmdType.GetQuestDataScRsp},
             {CmdType.GetQuestRecordCsReq, CmdType.GetQuestRecordScRsp},
             {CmdType.GetFriendListInfoCsReq, CmdType.GetFriendListInfoScRsp},
             {CmdType.GetFriendApplyListInfoCsReq, CmdType.GetFriendApplyListInfoScRsp},
@@ -71,8 +75,8 @@
             {CmdType.GetAvatarDataCsReq, CmdType.GetAvatarDataScRsp},
             {CmdType.GetAllLineupDataCsReq, CmdType.GetAllLineupDataScRsp},
             {CmdType.GetActivityScheduleConfigCsReq, CmdType.GetActivityScheduleConfigScRsp},
-            {CmdType.GetMissionDataCsReq, CmdType.GetMissionDataScRsp},
-            {CmdType.GetMissionEventDataCsReq, CmdType.GetMissionEventDataScRsp},
+            //{CmdType.GetMissionDataCsReq, CmdType.GetMissionDataScRsp},
+            //{CmdType.GetMissionEventDataCsReq, CmdType.GetMissionEventDataScRsp},
             {CmdType.GetChallengeCsReq, CmdType.GetChallengeScRsp},
             {CmdType.GetCurChallengeCsReq, CmdType.GetCurChallengeScRsp},
             {CmdType.GetRogueInfoCsReq, CmdType.GetRogueInfoScRsp},

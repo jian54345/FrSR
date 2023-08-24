@@ -10,6 +10,10 @@
 
         public void Initialize(string path)
         {
+            // in case some user forgets to change this and for testing purpose can be deleted later.
+            if (!File.Exists(path))
+                path = path.Replace(".json", ".example.json");
+
             var builder = new ConfigurationBuilder()
                 .AddJsonFile(path, false, true)
                 .AddEnvironmentVariables();

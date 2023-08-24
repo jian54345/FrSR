@@ -16,7 +16,23 @@ namespace FreeSR.Gateserver.Manager.Handlers
         {
             var request = data as QuitBattleCsReq;
 
-            session.Send(CmdType.QuitBattleCsReq, new QuitBattleScRsp() { Retcode = Retcode.RETCODE_RET_SUCC });
+            session.Send(CmdType.QuitBattleScRsp, new QuitBattleScRsp() { Retcode = Retcode.RETCODE_RET_SUCC });
         }
+
+
+        [Handler(CmdType.GetCurBattleInfoCsReq)]
+        public static void OnGetCurBattleInfoCsReq(NetSession session, int cmdId, object data)
+        {
+            var request = data as GetCurBattleInfoCsReq;
+
+            session.Send(CmdType.GetCurBattleInfoScRsp, new GetCurBattleInfoScRsp() 
+            {
+                Retcode = Retcode.RETCODE_RET_SUCC,
+                BattleInfo = new() { },
+                StageId = 10000,
+                LastEndStatus = BattleEndStatus.BATTLE_END_WIN    
+            });
+        }
+
     }
 }

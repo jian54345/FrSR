@@ -4,6 +4,7 @@
     using DotNetty.Codecs;
     using DotNetty.Transport.Channels;
     using FreeSR.Gateserver.Network.Packet;
+    using FreeSR.Proto;
     using NLog;
 
     internal class PacketEncoder : MessageToByteEncoder<NetPacket>
@@ -13,7 +14,9 @@
         protected override void Encode(IChannelHandlerContext context, NetPacket message, IByteBuffer output)
         {
             output.WriteBytes(message.Buf);
-            s_log.Info($"Sent packet with cmdId {message.CmdId}");
+            //s_log.Info($"Sent packet with cmdId {message.CmdId}");
+            var cmdId = (CmdType)message.CmdId;
+            s_log.Info($"Send packet {cmdId}");
         }
     }
 }

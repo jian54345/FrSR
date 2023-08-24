@@ -83,5 +83,60 @@
 
             session.Send(CmdType.GetMissionStatusScRsp, response);
         }
+
+        [Handler(CmdType.GetMissionDataCsReq)]
+        public static void OnGetMissionDataCsReq(NetSession session, int cmdId, object data)
+        {
+            var request = data as GetMissionDataCsReq;
+
+            session.Send(CmdType.GetMissionDataScRsp, new GetMissionDataScRsp
+            {
+                Retcode = Retcode.RETCODE_RET_SUCC,
+                MissionList = new() 
+                { 
+                },
+                MIEEPAJJAEK = new()
+                {
+
+                }
+            });
+        }
+
+        [Handler(CmdType.FinishTalkMissionCsReq)]
+        public static void OnFinishTalkMissionCsReq(NetSession session, int cmdId, object data)
+        {
+            var request = data as FinishTalkMissionCsReq;
+
+            session.Send(CmdType.FinishTalkMissionScRsp, new FinishTalkMissionScRsp
+            {
+                Retcode = Retcode.RETCODE_RET_SUCC,
+                SubMissionId = 0,
+                TalkStr = "",
+                EDDNGGNLBFC = new()
+                {
+
+                },
+            });
+        }
+
+        [Handler(CmdType.GetMissionEventDataCsReq)]
+        public static void OnGetMissionEventDataCsReq(NetSession session, int cmdId, object data)
+        {
+            var request = data as GetMissionEventDataCsReq;
+
+            session.Send(CmdType.GetMissionDataScRsp, new GetMissionDataScRsp
+            {
+                Retcode = Retcode.RETCODE_RET_SUCC,
+                MIEEPAJJAEK = new()
+                {
+
+                },
+                MissionList = new()
+                {
+
+                },
+            });
+        }
+
     }
 }

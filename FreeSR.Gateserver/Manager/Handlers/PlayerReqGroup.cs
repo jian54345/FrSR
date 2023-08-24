@@ -55,7 +55,7 @@
                 ExchangeTimes = 0,
                 Retcode = 0,
                 NextRecoverTime = 2281337,
-                WeekCocoonFinishedCount = 0
+                WeekCocoonFinishedCount = 0                
             });
         }
 
@@ -115,7 +115,25 @@
         {
             var request = data as PlayerLogoutCsReq;
 
-            session.Send(CmdType.PlayerLogoutScRsp, new object());
+            // Sends nothing and expects nothing? idk
+
+            session.Send(CmdType.PlayerLogoutScRsp, new PlayerLogoutCsReq() { });
         }
+
+        [Handler(CmdType.GetAuthkeyCsReq)]
+        public static void OnGetAuthkeyCsReq(NetSession session, int cmdId, object data)
+        {
+            var request = data as GetAuthkeyCsReq;          
+
+            session.Send(CmdType.GetAuthkeyScRsp, new GetAuthkeyScRsp() 
+            { 
+                Retcode = Retcode.RETCODE_RET_SUCC,
+                //SignType = 0, 
+                //AuthAppid = request.AuthAppid,
+                //AuthkeyVer = request.AuthkeyVer,
+                //Authkey 
+            });
+        }
+
     }
 }

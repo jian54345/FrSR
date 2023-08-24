@@ -18,7 +18,7 @@
                 AvatarList = new List<Avatar>()
             };
 
-            int[] characters = new int[] { 8001, 1005, 1003 };
+            int[] characters = new int[] { 8001, 1005, 1003 , 1107 };
 
             foreach (int id in characters)
             {

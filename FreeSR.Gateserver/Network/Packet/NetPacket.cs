@@ -8,8 +8,8 @@
     {
         private const uint HeadMagicConst = 0x9d74c714;
         private const uint TailMagicConst = 0xd7a152c8;
-        private const ushort unknownShort_1 = 0xc714;
-        private const ushort unknownShort_2 = 0x52c8;
+        private const ushort unknownUShort_1 = 0xc714;
+        private const ushort unknownUShort_2 = 0x52c8;
 
         public int CmdId { get; set; }
         public int HeadLen { get; set; }
@@ -60,13 +60,13 @@
             PacketLen = RawData.Length;
 
             buf.WriteUnsignedShort((ushort)(HeadMagicConst >> 16));
-            buf.WriteUnsignedShort(unknownShort_1);
+            buf.WriteUnsignedShort(unknownUShort_1);
             buf.WriteShort(CmdId);
             buf.WriteShort(HeadLen);
             buf.WriteInt(PacketLen);
             buf.WriteBytes(RawData);
             buf.WriteUnsignedShort((ushort)(TailMagicConst >> 16));
-            buf.WriteUnsignedShort(unknownShort_2);
+            buf.WriteUnsignedShort(unknownUShort_2);
         }
     }
 

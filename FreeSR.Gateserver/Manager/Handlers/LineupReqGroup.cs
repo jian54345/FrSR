@@ -23,7 +23,7 @@
                 AMBCECDBHFC = 5
             };
 
-            var characters = new int[] { 8001, 1005, 1003 };
+            var characters = new int[] { 8001, 1005, 1003, 1107 };
 
             foreach (int id in characters)
             {
@@ -60,7 +60,7 @@
                 LeaderSlot = 3
             });
 
-            var characters = new int[] { 8001, 1005, 1003 };
+            var characters = new int[] { 8001, 1005, 1003, 1107 };
 
             foreach (int id in characters)
             {

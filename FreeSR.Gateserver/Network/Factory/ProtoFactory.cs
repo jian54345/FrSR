@@ -38,15 +38,17 @@
                 
                 {CmdType.GetBagCsReq, typeof(GetBagCsReq)},
 
+
                 {CmdType.SceneEntityMoveCsReq, typeof(SceneEntityMoveCsReq)},
-
                 {CmdType.PlayerLogoutCsReq, typeof(PlayerLogoutCsReq)},
-
                 {CmdType.GetMailCsReq, typeof(GetMailCsReq)},
-
                 {CmdType.SetClientPausedCsReq, typeof(SetClientPausedCsReq)},
-
                 {CmdType.QuitBattleCsReq, typeof(QuitBattleCsReq)},
+                {CmdType.GetMissionDataCsReq, typeof(GetMissionDataCsReq)},
+                {CmdType.FinishTalkMissionCsReq, typeof(FinishTalkMissionCsReq)},
+                {CmdType.GetMissionEventDataCsReq, typeof(GetMissionEventDataCsReq)},
+                {CmdType.GetCurBattleInfoCsReq, typeof(GetCurBattleInfoCsReq)},
+                {CmdType.GetShopListCsReq, typeof(GetShopListCsReq)},
 
             });
 
