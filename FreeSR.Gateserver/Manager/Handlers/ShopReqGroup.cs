@@ -1,14 +1,8 @@
-﻿using FreeSR.Gateserver.Manager.Handlers.Core;
-using FreeSR.Gateserver.Network;
-using FreeSR.Proto;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FreeSR.Gateserver.Manager.Handlers
+﻿namespace FreeSR.Gateserver.Manager.Handlers
 {
+    using FreeSR.Gateserver.Manager.Handlers.Core;
+    using FreeSR.Gateserver.Network;
+    using FreeSR.Proto;
     internal class ShopReqGroup
     {
         [Handler(CmdType.GetShopListCsReq)]

@@ -88,5 +88,27 @@
                 Retcode = Retcode.RETCODE_RET_SUCC
             });
         }
+
+        [Handler(CmdType.GetLineupAvatarDataCsReq)]
+        public static void OnGetLineupAvatarDataCsReq(NetSession session, int cmdId, object data)
+        {
+            var request = data as GetLineupAvatarDataCsReq;
+            session.Send(CmdType.GetLineupAvatarDataScRsp, new GetLineupAvatarDataScRsp
+            {
+                Retcode = Retcode.RETCODE_RET_SUCC,
+            });
+        }
+
+        [Handler(CmdType.ReplaceLineupCsReq)]
+        public static void OnReplaceLineupCsReq(NetSession session, int cmdId, object data)
+        {
+            var request = data as ReplaceLineupCsReq;
+
+            session.Send(CmdType.ReplaceLineupScRsp, new ReplaceLineupScRsp
+            {
+                Retcode = Retcode.RETCODE_RET_SUCC,    
+            });
+        }
+
     }
 }

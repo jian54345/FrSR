@@ -2,6 +2,7 @@
 {
     using FreeSR.Gateserver.Manager.Handlers.Core;
     using FreeSR.Gateserver.Network;
+    using FreeSR.Proto;
     using Nito.AsyncEx;
     using NLog;
     using System.Collections.Immutable;
@@ -56,7 +57,7 @@
             }
             else
             {
-                s_log.Warn($"Can't find handler, cmdId: {cmdId}");
+                s_log.Warn($"Can't find handler, cmdId: {(CmdType)cmdId}");
             }
         }
 

@@ -1,9 +1,8 @@
-﻿using FreeSR.Gateserver.Manager.Handlers.Core;
-using FreeSR.Gateserver.Network;
-using FreeSR.Proto;
-
-namespace FreeSR.Gateserver.Manager.Handlers
+﻿namespace FreeSR.Gateserver.Manager.Handlers
 {
+    using FreeSR.Gateserver.Manager.Handlers.Core;
+    using FreeSR.Gateserver.Network;
+    using FreeSR.Proto;
     internal static class MailReqGroup
     {
         [Handler(CmdType.GetMailCsReq)]

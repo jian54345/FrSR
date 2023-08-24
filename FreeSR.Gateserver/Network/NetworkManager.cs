@@ -33,8 +33,16 @@
                 NotifyManager.AddReqGroupHandler(typeof(SceneReqGroup));
                 NotifyManager.AddReqGroupHandler(typeof(GachaReqGroup));
                 NotifyManager.AddReqGroupHandler(typeof(NPCReqGroup));
+
                 NotifyManager.AddReqGroupHandler(typeof(BattleReqGroup));
                 NotifyManager.AddReqGroupHandler(typeof(ShopReqGroup));
+                NotifyManager.AddReqGroupHandler(typeof(ChallengeReqGroup));
+                NotifyManager.AddReqGroupHandler(typeof(KeyReqGroup));
+                NotifyManager.AddReqGroupHandler(typeof(FriendReqGroup));
+                NotifyManager.AddReqGroupHandler(typeof(ClientReqGroup));
+                NotifyManager.AddReqGroupHandler(typeof(AssistReqGroup));
+                NotifyManager.AddReqGroupHandler(typeof(ArchiveReqGroup));
+
 
                 NotifyManager.Init();
             }

@@ -3,7 +3,6 @@
     using FreeSR.Gateserver.Manager.Handlers.Core;
     using FreeSR.Gateserver.Network;
     using FreeSR.Proto;
-    using System.ComponentModel.Design;
 
     internal static class NPCReqGroup
     {
@@ -35,6 +34,15 @@
                         KBGCLBANHMF = 1
                     },
                 }
+            });
+        }
+
+        [Handler(CmdType.GetNpcStatusCsReq)]
+        public static void OnGetNpcStatusCsReq(NetSession session, int cmdId, object data)
+        {
+            session.Send(CmdType.GetNpcStatusScRsp, new GetNpcStatusScRsp
+            {
+                Retcode = Retcode.RETCODE_RET_SUCC,
             });
         }
     }

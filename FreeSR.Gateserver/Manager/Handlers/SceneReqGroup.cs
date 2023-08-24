@@ -3,8 +3,6 @@
     using FreeSR.Gateserver.Manager.Handlers.Core;
     using FreeSR.Gateserver.Network;
     using FreeSR.Proto;
-
-
     internal static class SceneReqGroup
     {
         [Handler(CmdType.GetCurSceneInfoCsReq)]
@@ -55,19 +53,6 @@
             });
         }
 
-
-        [Handler(CmdType.SetClientPausedCsReq)]
-        public static void OnSetClientPausedCsReq(NetSession session, int cmdId, object data)
-        {
-            var request = data as SetClientPausedCsReq;
-
-            session.Send(CmdType.SetClientPausedScRsp, new SetClientPausedScRsp
-            {
-                Paused = request.Paused,
-                Retcode = Retcode.RETCODE_RET_SUCC
-            });
-        }
-
         [Handler(CmdType.GetSceneMapInfoCsReq)]
         public static void OnGetSceneMapInfoCsReq(NetSession session, int cmdId, object data)
         {
@@ -95,9 +80,8 @@
                 UnlockTeleportList = new() 
                 { 
                 },
+                
             });
         }
-
-
     }
 }

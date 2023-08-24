@@ -111,27 +111,103 @@
         }
 
         [Handler(CmdType.PlayerLogoutCsReq)]
-        public static void OnPlayerLogoutCsReq(NetSession session, int cmdId, object data)
+        public static void OnPlayerLogoutCsReq(NetSession session, int cmdId, object _)
         {
-            var request = data as PlayerLogoutCsReq;
-
             // Sends nothing and expects nothing? idk
 
             session.Send(CmdType.PlayerLogoutScRsp, new PlayerLogoutCsReq() { });
         }
 
-        [Handler(CmdType.GetAuthkeyCsReq)]
-        public static void OnGetAuthkeyCsReq(NetSession session, int cmdId, object data)
+        [Handler(CmdType.GetPhoneDataCsReq)]
+        public static void OnGetPhoneDataCsReq(NetSession session, int cmdId, object _)
         {
-            var request = data as GetAuthkeyCsReq;          
-
-            session.Send(CmdType.GetAuthkeyScRsp, new GetAuthkeyScRsp() 
-            { 
+            session.Send(CmdType.GetPhoneDataScRsp, new GetPhoneDataScRsp()
+            {
                 Retcode = Retcode.RETCODE_RET_SUCC,
-                //SignType = 0, 
-                //AuthAppid = request.AuthAppid,
-                //AuthkeyVer = request.AuthkeyVer,
-                //Authkey 
+                DDAKBIDPPIC = 0,
+                MICAEKDOFLH = new List<int>(),
+            });
+        }
+
+        [Handler(CmdType.PlayerLoginFinishCsReq)]
+        public static void OnPlayerLoginFinishCsReq(NetSession session, int cmdId, object _)
+        {
+            session.Send(CmdType.PlayerLoginFinishScRsp, new PlayerLoginFinishScRsp()
+            {
+                Retcode = Retcode.RETCODE_RET_SUCC,
+             
+            });
+        }
+
+        [Handler(CmdType.GetLoginActivityCsReq)]
+        public static void OnGetLoginActivityCsReq(NetSession session, int cmdId, object _)
+        {
+            session.Send(CmdType.GetLoginActivityScRsp, new GetLoginActivityScRsp()
+            {
+                Retcode = Retcode.RETCODE_RET_SUCC,
+                LoginActivityList = new List<LoginActivityData> 
+                { 
+
+                },
+            });
+        }
+
+        [Handler(CmdType.GetPlayerReturnMultiDropInfoCsReq)]
+        public static void OnGetPlayerReturnMultiDropInfoCsReq(NetSession session, int cmdId, object _)
+        {
+            session.Send(CmdType.GetPlayerReturnMultiDropInfoScRsp, new GetPlayerReturnMultiDropInfoScRsp()
+            {
+                Retcode = Retcode.RETCODE_RET_SUCC,
+                JKEHCHDHCHP = new()
+                {
+
+                },
+            });
+        }
+
+        [Handler(CmdType.PlayerReturnInfoQueryCsReq)]
+        public static void OnPlayerReturnInfoQueryCsReq(NetSession session, int cmdId, object _)
+        {
+            session.Send(CmdType.PlayerReturnInfoQueryScRsp, new PlayerReturnInfoQueryScRsp()
+            {
+                Retcode = Retcode.RETCODE_RET_SUCC,
+                EBEOFGAPPGB = new()
+                {
+
+                },
+                KEFAOCBMJOO = new()
+                {
+
+                },
+            });
+        }
+
+        [Handler(CmdType.GetPlayerBoardDataCsReq)]
+        public static void OnGetPlayerBoardDataCsReq(NetSession session, int cmdId, object _)
+        {
+            session.Send(CmdType.GetPlayerBoardDataScRsp, new GetPlayerBoardDataScRsp()
+            {
+                Retcode = Retcode.RETCODE_RET_SUCC,
+                Signature = "",
+                CurrentHeadIconId = 0,
+                DisplayAvatarVec = new()
+                {
+
+                },
+                GHEJADAMLJN = 0,
+                UnlockedHeadIconList = new()
+                {
+
+                }
+            });
+        }
+
+        [Handler(CmdType.GetLevelRewardTakenListCsReq)]
+        public static void OnGetLevelRewardTakenListCsReq(NetSession session, int cmdId, object _)
+        {
+            session.Send(CmdType.GetLevelRewardTakenListScRsp, new GetLevelRewardTakenListScRsp()
+            {
+                Retcode = Retcode.RETCODE_RET_SUCC,
             });
         }
 

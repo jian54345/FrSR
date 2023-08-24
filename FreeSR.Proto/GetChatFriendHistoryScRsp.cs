@@ -6,7 +6,7 @@ namespace FreeSR.Proto
 	public class GetChatFriendHistoryScRsp
 	{
 		[ProtoMember(11)] public int Retcode;
-		[ProtoMember(2)] public List<JAKGDJEHMMI> FriendHistoryList;
+		[ProtoMember(2)] public List<Friend> FriendHistoryList;
 	}
 	
 }

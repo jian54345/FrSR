@@ -50,6 +50,29 @@
                 {CmdType.GetCurBattleInfoCsReq, typeof(GetCurBattleInfoCsReq)},
                 {CmdType.GetShopListCsReq, typeof(GetShopListCsReq)},
 
+                {CmdType.GetPhoneDataCsReq, typeof(GetPhoneDataCsReq)},
+                {CmdType.GetSecretKeyInfoCsReq, typeof(GetSecretKeyInfoCsReq)},
+                {CmdType.PlayerLoginFinishCsReq, typeof(PlayerLoginFinishCsReq)},
+                {CmdType.GetVideoVersionKeyCsReq, typeof(PlayerLoginFinishCsReq)},
+                {CmdType.GetChatFriendHistoryCsReq, typeof(GetChatFriendHistoryCsReq)},
+                {CmdType.GetLoginActivityCsReq, typeof(GetLoginActivityCsReq)},
+                {CmdType.GetFriendApplyListInfoCsReq, typeof(GetFriendApplyListInfoCsReq)},
+                {CmdType.GetFriendListInfoCsReq, typeof(GetFriendListInfoCsReq)},
+                {CmdType.GetPlayerReturnMultiDropInfoCsReq, typeof(GetPlayerReturnMultiDropInfoCsReq)},
+                {CmdType.PlayerReturnInfoQueryCsReq, typeof(PlayerReturnInfoQueryCsReq)},
+                {CmdType.GetPlayerBoardDataCsReq, typeof(GetPlayerBoardDataCsReq)},
+                {CmdType.GetNpcStatusCsReq, typeof(GetNpcStatusCsReq)},
+                {CmdType.GetLevelRewardTakenListCsReq, typeof(GetLevelRewardTakenListCsReq)},
+                {CmdType.SyncClientResVersionCsReq, typeof(SyncClientResVersionCsReq)},
+                {CmdType.GetCurAssistCsReq, typeof(GetCurAssistCsReq)},
+                {CmdType.GetQuestRecordCsReq, typeof(GetQuestRecordCsReq)},
+
+                {CmdType.GetLineupAvatarDataCsReq, typeof(GetLineupAvatarDataCsReq)},
+                {CmdType.ReplaceLineupCsReq, typeof(ReplaceLineupCsReq)},
+                {CmdType.GetCurChallengeCsReq, typeof(GetCurChallengeCsReq)},
+                {CmdType.GetArchiveDataCsReq, typeof(GetArchiveDataCsReq)},
+                {CmdType.GetUpdatedArchiveDataCsReq, typeof(GetUpdatedArchiveDataCsReq)},
+
             });
 
             s_types = builder.ToImmutable();

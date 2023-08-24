@@ -3,10 +3,7 @@
     using FreeSR.Gateserver.Manager.Handlers.Core;
     using FreeSR.Gateserver.Network;
     using FreeSR.Proto;
-    using static System.Net.WebRequestMethods;
     using System.Collections.Generic;
-    using System.Net.Http.Headers;
-    using System.ComponentModel.Design;
 
     internal static class GachaReqGroup
     {
