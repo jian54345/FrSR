@@ -83,5 +83,34 @@
                 
             });
         }
+
+        //[Handler(CmdType.SceneUpdatePositionVersionNotify)]
+        public static void OnSceneUpdatePositionVersionNotify(NetSession session, int cmdId, object data)
+        {
+
+        }
+
+        [Handler(CmdType.EnterSectionCsReq)]
+        public static void OnEnterSectionCsReq(NetSession session, int cmdId, object data)
+        {
+            var request = data as EnterSectionCsReq;
+
+            session.Send(CmdType.EnterSectionScRsp, new EnterSectionCsRsp()
+            {
+                Retcode = Retcode.RETCODE_RET_SUCC,    
+            });
+        }
+
+        [Handler(CmdType.EntityBindPropCsReq)]
+        public static void OnEntityBindPropCsReq(NetSession session, int cmdId, object data)
+        {
+            var request = data as EnterSectionCsReq;
+
+            session.Send(CmdType.EntityBindPropScRsp, new EntityBindPropScRsp()
+            {
+                Retcode = Retcode.RETCODE_RET_SUCC,         
+            });
+        }
+
     }
 }

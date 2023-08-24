@@ -20,19 +20,26 @@
         public override void ChannelRead(IChannelHandlerContext context, object message)
         {
             NetPacket packet = message as NetPacket;
-            var cmdId = (CmdType)packet.CmdId;
+            CmdType cmdType = (CmdType)packet.CmdId;
+
             if (packet.Data == null)
             {
                 if (!SendDummyResponse(packet.CmdId))
 
-                    s_log.Warn($"CmdID {cmdId} is undefined.");
+                    s_log.Warn($"CmdID {cmdType} is undefined.");
 
                 return;
             }
 
-            Protobuf2File(packet.CmdId, packet.Data);
+            //Protobuf2File(packet.CmdId, packet.Data);
 
-            s_log.Info($"Received {cmdId}!");
+            if(cmdType == CmdType.PlayerHeartBeatCsReq)
+            {
+                // GOT ANNYOING SO FUCK PLAYERHEARTBEAT
+            } else
+            {
+                s_log.Info($"Received {cmdType}!");
+            }
             NotifyManager.Notify(_session, packet.CmdId, packet.Data);
         }
 

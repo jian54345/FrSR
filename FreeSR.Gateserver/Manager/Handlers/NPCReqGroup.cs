@@ -45,5 +45,24 @@
                 Retcode = Retcode.RETCODE_RET_SUCC,
             });
         }
+
+        [Handler(CmdType.GetNpcMessageGroupCsReq)]
+        public static void OnGetNpcMessageGroupCsReq(NetSession session, int cmdId, object data)
+        {
+            session.Send(CmdType.GetNpcMessageGroupScRsp, new GetNpcMessageGroupScRsp
+            {
+                Retcode = Retcode.RETCODE_RET_SUCC,
+            });
+        }
+
+        [Handler(CmdType.GetFirstTalkNpcCsReq)]
+        public static void OnGetFirstTalkNpcCsReq(NetSession session, int cmdId, object data)
+        {
+            session.Send(CmdType.GetFirstTalkNpcScRsp, new GetFirstTalkNpcScRsp
+            {
+                Retcode = Retcode.RETCODE_RET_SUCC,
+            });
+        }
+
     }
 }

@@ -42,6 +42,7 @@
                 NotifyManager.AddReqGroupHandler(typeof(ClientReqGroup));
                 NotifyManager.AddReqGroupHandler(typeof(AssistReqGroup));
                 NotifyManager.AddReqGroupHandler(typeof(ArchiveReqGroup));
+                NotifyManager.AddReqGroupHandler(typeof(RaidReqGroup));
 
 
                 NotifyManager.Init();

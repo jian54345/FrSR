@@ -35,7 +35,7 @@
 
                 {CmdType.GetNpcTakenRewardCsReq, typeof(GetNpcTakenRewardCsReq)},
                 {CmdType.GetFirstTalkByPerformanceNpcCsReq, typeof(GetFirstTalkByPerformanceNpcCsReq)},
-                
+
                 {CmdType.GetBagCsReq, typeof(GetBagCsReq)},
 
 
@@ -52,6 +52,7 @@
 
                 {CmdType.GetPhoneDataCsReq, typeof(GetPhoneDataCsReq)},
                 {CmdType.GetSecretKeyInfoCsReq, typeof(GetSecretKeyInfoCsReq)},
+                {CmdType.GetAuthkeyCsReq, typeof(GetAuthkeyCsReq)},
                 {CmdType.PlayerLoginFinishCsReq, typeof(PlayerLoginFinishCsReq)},
                 {CmdType.GetVideoVersionKeyCsReq, typeof(PlayerLoginFinishCsReq)},
                 {CmdType.GetChatFriendHistoryCsReq, typeof(GetChatFriendHistoryCsReq)},
@@ -72,6 +73,17 @@
                 {CmdType.GetCurChallengeCsReq, typeof(GetCurChallengeCsReq)},
                 {CmdType.GetArchiveDataCsReq, typeof(GetArchiveDataCsReq)},
                 {CmdType.GetUpdatedArchiveDataCsReq, typeof(GetUpdatedArchiveDataCsReq)},
+
+                {CmdType.GetTutorialCsReq, typeof(GetTutorialCsReq)},
+                {CmdType.GetTutorialGuideCsReq, typeof(GetTutorialGuideCsReq)},
+                {CmdType.GetAllSaveRaidCsReq, typeof(GetAllSaveRaidCsReq)},
+                {CmdType.GetFirstTalkNpcCsReq, typeof(GetFirstTalkNpcCsReq)},
+                {CmdType.EnterSectionCsReq, typeof(EnterSectionCsReq)},
+                {CmdType.EntityBindPropCsReq, typeof(EntityBindPropCsReq)},
+                {CmdType.FinishTutorialCsReq, typeof(FinishTutorialCsReq)},
+                {CmdType.UnlockTutorialCsReq, typeof(UnlockTutorialCsReq)},
+                {CmdType.UnlockTutorialGuideCsReq, typeof(UnlockTutorialGuideCsReq)},
+                {CmdType.GetNpcMessageGroupCsReq, typeof(GetNpcMessageGroupCsReq)},
 
             });
 

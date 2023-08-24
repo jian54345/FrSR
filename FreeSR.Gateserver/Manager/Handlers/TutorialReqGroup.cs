@@ -4,6 +4,7 @@
     using FreeSR.Gateserver.Network;
     using FreeSR.Proto;
     using NLog;
+    using static System.Runtime.InteropServices.JavaScript.JSType;
 
     internal static class TutorialReqGroup
     {
@@ -66,5 +67,55 @@
 
             session.Send(CmdType.GetTutorialScRsp, response);
         }
+
+        [Handler(CmdType.UnlockTutorialCsReq)]
+        public static void OnUnlockTutorialCsReq(NetSession session, int cmdId, object data)
+        {
+            var request = data as UnlockTutorialCsReq;
+
+            session.Send(CmdType.UnlockTutorialScRsp, new UnlockTutorialScRsp()
+            {
+                Retcode = Retcode.RETCODE_RET_SUCC,
+                Tutorial = new()
+                {
+                    Status = TutorialStatus.TUTORIAL_FINISH,
+                    Id = request.TutorialId,
+                }
+            });
+        }
+
+
+        [Handler(CmdType.FinishTutorialCsReq)]
+        public static void OnFinishTutorialCsReq(NetSession session, int cmdId, object data)
+        {
+            var request = data as FinishTutorialCsReq;
+
+            session.Send(CmdType.FinishTutorialScRsp, new FinishTutorialScRsp()
+            {
+                Retcode = Retcode.RETCODE_RET_SUCC,
+                Tutorial = new()
+                {
+                    Id = request.TutorialId,
+                    Status = TutorialStatus.TUTORIAL_FINISH,
+                }
+            });
+        }
+
+        [Handler(CmdType.UnlockTutorialGuideCsReq)]
+        public static void OnUnlockTutorialGuideCsReq(NetSession session, int cmdId, object data)
+        {
+            var request = data as UnlockTutorialGuideCsReq;
+
+            session.Send(CmdType.UnlockTutorialGuideScRsp, new UnlockTutorialGuideScRsp()
+            {
+                Retcode = Retcode.RETCODE_RET_SUCC,
+                TutorialGuide = new()
+                {
+                    Id = request.GroupId,
+                    Status = TutorialStatus.TUTORIAL_FINISH,
+                }
+            });
+        }
+
     }
 }

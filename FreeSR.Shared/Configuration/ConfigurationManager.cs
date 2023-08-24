@@ -10,8 +10,8 @@
 
         public void Initialize(string path)
         {
-            // in case some user forgets to change this and for testing purpose can be deleted later.
             if (!File.Exists(path))
+                Console.WriteLine($"Didnt found a {path}, so will be defaulting to the example.json");
                 path = path.Replace(".json", ".example.json");
 
             var builder = new ConfigurationBuilder()

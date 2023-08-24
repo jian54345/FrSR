@@ -14,9 +14,14 @@
         protected override void Encode(IChannelHandlerContext context, NetPacket message, IByteBuffer output)
         {
             output.WriteBytes(message.Buf);
-            //s_log.Info($"Sent packet with cmdId {message.CmdId}");
-            var cmdId = (CmdType)message.CmdId;
-            s_log.Info($"Send packet {cmdId}");
+
+            if((CmdType)message.CmdId == CmdType.PlayerHeartBeatCsReq)
+            {
+
+            } else
+            {
+                s_log.Info($"Send packet {(CmdType)message.CmdId}");
+            }
         }
     }
 }
