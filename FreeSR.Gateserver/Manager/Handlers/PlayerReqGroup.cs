@@ -109,5 +109,13 @@
                 Level = 50
             });
         }
+
+        [Handler(CmdType.PlayerLogoutCsReq)]
+        public static void OnPlayerLogoutCsReq(NetSession session, int cmdId, object data)
+        {
+            var request = data as PlayerLogoutCsReq;
+
+            session.Send(CmdType.PlayerLogoutScRsp, new object());
+        }
     }
 }

@@ -36,7 +36,16 @@
                 {CmdType.GetNpcTakenRewardCsReq, typeof(GetNpcTakenRewardCsReq)},
                 {CmdType.GetFirstTalkByPerformanceNpcCsReq, typeof(GetFirstTalkByPerformanceNpcCsReq)},
                 
-                {CmdType.GetBagCsReq, typeof(GetBagCsReq)}
+                {CmdType.GetBagCsReq, typeof(GetBagCsReq)},
+
+                {CmdType.SceneEntityMoveCsReq, typeof(SceneEntityMoveCsReq)},
+
+                {CmdType.PlayerLogoutCsReq, typeof(PlayerLogoutCsReq)},
+
+                {CmdType.GetMailCsReq, typeof(GetMailCsReq)},
+
+                {CmdType.SetClientPausedCsReq, typeof(SetClientPausedCsReq)},
+
             });
 
             s_types = builder.ToImmutable();

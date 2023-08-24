@@ -5,7 +5,7 @@ namespace FreeSR.Proto
 	[ProtoContract]
 	public class SetClientPausedCsReq
 	{
-		[ProtoMember(10)] public bool CHJIGLEHMAP;
+		[ProtoMember(10)] public bool Paused;
 	}
 	
 }

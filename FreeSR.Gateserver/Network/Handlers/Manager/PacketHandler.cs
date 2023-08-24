@@ -28,6 +28,8 @@
                 return;
             }
 
+            Protobuf2File(packet.CmdId, packet.Data);
+
             s_log.Info($"Received packet {packet.CmdId}!");
             NotifyManager.Notify(_session, packet.CmdId, packet.Data);
         }
@@ -99,5 +101,18 @@
 
         [ProtoContract]
         private class DummyPacket { }
+
+
+        public void Protobuf2File(int cmdId, object data)
+        {
+            CmdType cmd = (CmdType)cmdId;
+
+            string filepath = $"C:\\protobuf\\{cmd}.bin";
+
+            using (var file = File.Create(filepath))
+            {
+                Serializer.Serialize(file, data);
+            }
+        }
     }
 }

@@ -5,8 +5,8 @@ namespace FreeSR.Proto
 	[ProtoContract]
 	public class GetMailCsReq
 	{
-		[ProtoMember(15)] public int LAABBGODKPN;
-		[ProtoMember(12)] public int MACPCAKAGIE;
+		[ProtoMember(15)] public int Start;
+		[ProtoMember(12)] public int Stop;
 	}
 	
 }

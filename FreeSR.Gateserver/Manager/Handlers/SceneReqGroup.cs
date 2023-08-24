@@ -41,5 +41,32 @@
                 Retcode = Retcode.RETCODE_RET_SUCC
             });
         }
+
+        [Handler(CmdType.SceneEntityMoveCsReq)]
+        public static void OnSceneEntityMoveCsReq(NetSession session, int cmdId, object data)
+        {
+            var request = data as SceneEntityMoveCsReq;
+
+            session.Send(CmdType.SceneEntityMoveScRsp, new SceneEntityMoveScRsp
+            {
+                DownloadData = new() { },
+                EntityMotionList = request.EntityMotionList,
+                Retcode = Retcode.RETCODE_RET_SUCC
+            });
+        }
+
+
+        [Handler(CmdType.SetClientPausedCsReq)]
+        public static void OnSetClientPausedCsReq(NetSession session, int cmdId, object data)
+        {
+            var request = data as SetClientPausedCsReq;
+
+            session.Send(CmdType.SetClientPausedCsReq, new SetClientPausedScRsp
+            {
+                Paused = request.Paused,
+                Retcode = Retcode.RETCODE_RET_SUCC
+            });
+        }
+
     }
 }

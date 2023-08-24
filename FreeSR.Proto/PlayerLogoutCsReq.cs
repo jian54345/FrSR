@@ -3,7 +3,7 @@ namespace FreeSR.Proto
 	using ProtoBuf;
 
 	[ProtoContract]
-	public class CKCDDNFMDGO
+	public class PlayerLogoutCsReq
 	{
 	}
 	
