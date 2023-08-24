@@ -33,6 +33,7 @@
                 NotifyManager.AddReqGroupHandler(typeof(SceneReqGroup));
                 NotifyManager.AddReqGroupHandler(typeof(GachaReqGroup));
                 NotifyManager.AddReqGroupHandler(typeof(NPCReqGroup));
+                NotifyManager.AddReqGroupHandler(typeof(BattleReqGroup));
 
                 NotifyManager.Init();
             }

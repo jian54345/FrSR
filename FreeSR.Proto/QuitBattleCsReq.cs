@@ -3,9 +3,8 @@ namespace FreeSR.Proto
 	using ProtoBuf;
 
 	[ProtoContract]
-	public class JNLKMNNEDMF
+	public class QuitBattleCsReq
 	{
-		[ProtoMember(9)] public int Retcode;
 	}
 	
 }

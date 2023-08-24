@@ -46,6 +46,8 @@
 
                 {CmdType.SetClientPausedCsReq, typeof(SetClientPausedCsReq)},
 
+                {CmdType.QuitBattleCsReq, typeof(QuitBattleCsReq)},
+
             });
 
             s_types = builder.ToImmutable();
